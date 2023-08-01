@@ -1,0 +1,15 @@
+Yeah, we can obviously use AWS serverless framework to create a serverless rest API.
+However, the message was to not follow the easiest way. So, we are here in that document.
+
+This app is assumed to be deployed to the following AWS environment:
+(Cognito if it is necessary) + API Gateway + Lambda with ECR deployment type + DynamoDB database + CloudWatch
+
+Manual high-level action items that were performed are below:
+1. Create DynamoDB table with the product-employees table
+2. Create ECR repository where Lambda image will be stored
+3. Build Docker container from the project sources
+4. Upload created Docker container to the ECR repository
+5. Add IAM role that gives Lambda full(I know...) access to DynamoDB and CouldWatch services
+6. Create Lambda function based on the uploaded Docker image
+7. Add new proxy API Gateway deployment targeting to the created Lambda function
+8. Optional. Add Cognito authorizer to the API Gateway deployment

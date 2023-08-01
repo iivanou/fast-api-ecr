@@ -1,0 +1,8 @@
+botocore
+boto3
+fastapi
+pydantic
+pydantic-settings
+python-dotenv
+uvicorn
+mangum
